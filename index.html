@@ -1,15 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1ff);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* القلوب */
+.heart{
+position:absolute;
+color:#ff4d6d;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(.5);
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+}
+}
+
+
+/* الظرف */
+#envelope{
+width:260px;
+height:170px;
+background:#ff6b81;
+position:absolute;
+cursor:pointer;
+border-radius:8px;
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+transition:.8s;
+z-index:3;
+}
+
+
+#envelope::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-top:90px solid #ff8fa3;
+transform-origin:top;
+transition:.8s;
+}
+
+
+.open #envelope{
+opacity:0;
+transform:scale(.5);
+pointer-events:none;
+}
+
+
+.open #envelope::before{
+transform:rotateX(180deg);
+}
+
+
+/* الجواب */
+#letter{
+
+position:absolute;
+z-index:2;
+width:420px;
+max-width:90%;
+max-height:80vh;
+overflow:auto;
+
+background:white;
+padding:35px;
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+opacity:0;
+pointer-events:none;
+
+transform:translateY(150px) scale(.7);
+
+transition:1s;
+
+line-height:2;
+}
+
+
+.open #letter{
+
+opacity:1;
+pointer-events:auto;
+
+transform:translateY(0) scale(1);
+
+}
+
+
+#letter h1{
+color:#ff4d6d;
+margin-bottom:20px;
+}
+
+
+#letter p{
+font-size:18px;
+color:#444;
+}
+
+
+button{
+
+margin-top:25px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:#ff4d6d;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+
+#secret{
+
+margin-top:20px;
+
+display:none;
+
+font-size:22px;
+
+color:#ff2d55;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="envelope"></div>
+
+
+
+<div id="letter">
+
+
+<h1>💌 نمانيموووو نمنم المنمنمه</h1>
+
+
+<p>
+
+هفضل أقولك انك احسن حد فالدنيا 
+
+ونفسي تشوفي نفسك بعيني او تشوفي نفسك جوايا 
+
+هتعرفي انتي عندي ايه واني مبقتش عايز حد فالدنيا غيرك ❤️
+
+<br><br>
+
+
+كل وقت بيعدي وانتي جمبي بيكون احسن وقت عدى عليا في حياتي 
+
+وبقيت معلق بيكي في كل حاجه في حياتي
+
+<br><br>
+
+
+نفسي دايما اعملك كل حاجه بتحبيها ونفسك فيها وبتفرحك
+
+ونفسي دايما تفضلي موجوده في كل ثانيه في حياتي
+
+عشان انا مليش غيرك ❤️
+
+
+<br><br>
+
+
+انا بحبك يانونو ومش هحب ولا عايز احب حد غيرك
+
+انتي احسن وانضف واجمل بنت شوفتها
+
+وشكرا بجد علي كل حاجه بتحاولي تعمليها عشاني
+
+انا مقدر كل حاجه بتعمليها وشايفها كويس والله
+
+
+<br><br>
+
+
+انا بس عايزك تعرفي وتكوني متأكده اني انا بحبك
+
+وبحب كل حاجه فيكي
+
+انتي مميزه في عيني وعمري مشوفت حد زيك فالدنيا
+
+
+<br><br>
+
+
+ممكن نتجوز بقي ❤️
+
+
+</p>
+
+
+<button onclick="love()">
+اضغطي هنا ❤️
+</button>
+
+
+<div id="secret">
+بحبك.... 🌹❤️
+</div>
+
+
+</div>
+
+
+
 <script>
 
-const envelope = document.getElementById("envelope");
-const letter = document.getElementById("letter");
 
-envelope.addEventListener("click", function(){
+document.getElementById("envelope").onclick=function(){
 
-    document.body.classList.add("open");
+document.body.classList.add("open");
 
-    console.log("opened");
+}
 
-});
 
 
 for(let i=0;i<40;i++){
@@ -33,10 +286,16 @@ document.body.appendChild(h);
 }
 
 
+
 function love(){
 
 document.getElementById("secret").style.display="block";
 
 }
 
+
 </script>
+
+
+</body>
+</html>
